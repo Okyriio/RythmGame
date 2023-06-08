@@ -44,14 +44,23 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: e7254add9b032ef499a87ab39ff39ee2, type: 3}
+    - {fileID: 21300000, guid: 9fbf89dd560ac0b4d9523e1217900d23, type: 3}
+    - {fileID: 21300000, guid: e7254add9b032ef499a87ab39ff39ee2, type: 3}
+    - {fileID: 21300000, guid: 32d02e74805a65b46b37aa2435a90598, type: 3}
+    - {fileID: 21300000, guid: dab8204a9f6e7a941ac8ecdd67499c33, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 32d02e74805a65b46b37aa2435a90598, type: 3}
+  - {fileID: 21300000, guid: dab8204a9f6e7a941ac8ecdd67499c33, type: 3}
+  - {fileID: 21300000, guid: 9fbf89dd560ac0b4d9523e1217900d23, type: 3}
   - {fileID: 21300000, guid: e7254add9b032ef499a87ab39ff39ee2, type: 3}
   m_PackedSpriteNamesToIndex:
+  - whitekey
+  - blackpressed  1
+  - blackkey
   - allKeys
   m_RenderDataMap: {}
   m_Tag: KeysAtlas
