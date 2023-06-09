@@ -13,6 +13,7 @@ public class KeysController : MonoBehaviour
     public MidiChannel keyToPress;
 
     public int noteNumber;
+
     
     // Start is called before the first frame update
     void Start()
