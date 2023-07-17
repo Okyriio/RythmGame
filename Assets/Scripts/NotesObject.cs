@@ -12,8 +12,8 @@ public class NotesObject : MonoBehaviour
     public bool canBePressed;
     public bool obtained = false;
 	public ScreenShaker shake;
-	private float magn = 0.3f;
-	private float duration = 0.2f;
+	private float _magn = 0.3f;
+	private float _duration = 0.25f;
     void Start()
     {
     }
@@ -23,7 +23,7 @@ public class NotesObject : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress) && canBePressed)
         {
-			shake.TriggerShake(magn,duration);
+			shake.TriggerShake(_magn,_duration);
             obtained = true;
             gameObject.SetActive(false);
             GameManager.instance.NoteHit();

@@ -18,7 +18,7 @@ public class KeysController : MonoBehaviour
     void Start()
     {
         _spRend = GetComponent<SpriteRenderer>();
-        
+
     }
 
     // Update is called once per frame
