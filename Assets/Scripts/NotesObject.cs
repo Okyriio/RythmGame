@@ -11,6 +11,9 @@ public class NotesObject : MonoBehaviour
     public KeyCode keyToPress;
     public bool canBePressed;
     public bool obtained = false;
+	public ScreenShaker shake;
+	private float magn = 0.3f;
+	private float duration = 0.2f;
     void Start()
     {
     }
@@ -20,10 +23,12 @@ public class NotesObject : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress) && canBePressed)
         {
+			shake.TriggerShake(magn,duration);
             obtained = true;
             gameObject.SetActive(false);
             GameManager.instance.NoteHit();
         }
+	
     }
 
     private void OnTriggerEnter2D(Collider2D other)
