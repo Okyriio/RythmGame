@@ -20,6 +20,7 @@ public class NotesObject : MonoBehaviour
         if (Input.GetKeyDown(keyToPress) && canBePressed)
         {
             gameObject.SetActive(false);
+            GameManager.instance.NoteHite();
         }
     }
 
