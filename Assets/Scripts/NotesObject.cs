@@ -10,6 +10,7 @@ public class NotesObject : MonoBehaviour
   
     public KeyCode keyToPress;
     public bool canBePressed;
+    public bool obtained = false;
     void Start()
     {
     }
@@ -19,8 +20,9 @@ public class NotesObject : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress) && canBePressed)
         {
+            obtained = true;
             gameObject.SetActive(false);
-            GameManager.instance.NoteHite();
+            GameManager.instance.NoteHit();
         }
     }
 
@@ -29,6 +31,19 @@ public class NotesObject : MonoBehaviour
         if (other.tag == "Activator" )
         {
             canBePressed = true;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Activator" )
+        {
+            canBePressed = false;
+            if (!obtained)
+            {
+                GameManager.instance.NoteMiss();
+
+            }
         }
     }
 
