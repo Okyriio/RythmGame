@@ -10,9 +10,8 @@ public class KeysController : MonoBehaviour
 
     public Sprite KeysPressed;
     
-    public MidiChannel keyToPress;
+    public KeyCode keyToPress;
 
-    public int noteNumber;
 
     
     // Start is called before the first frame update
@@ -25,12 +24,12 @@ public class KeysController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (MidiDriver.Instance.GetKeyDown(keyToPress, noteNumber))
+      if (Input.GetKeyDown(keyToPress))
       {
           _spRend.sprite = KeysPressed;
       }
       
-      if (MidiDriver.Instance.GetKeyUp(keyToPress, noteNumber))
+      if (Input.GetKeyUp(keyToPress))
       {
           _spRend.sprite = KeysDefault;
       }

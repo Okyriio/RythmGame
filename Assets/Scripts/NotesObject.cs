@@ -8,9 +8,8 @@ public class NotesObject : MonoBehaviour
 {
     // Start is called before the first frame update
   
-    public MidiChannel keyToPress;
+    public KeyCode keyToPress;
     public bool canBePressed;
-    public int noteNumber;
     void Start()
     {
     }
@@ -18,7 +17,7 @@ public class NotesObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MidiDriver.Instance.GetKeyDown(keyToPress, noteNumber) && canBePressed)
+        if (Input.GetKeyDown(keyToPress) && canBePressed)
         {
             gameObject.SetActive(false);
         }
