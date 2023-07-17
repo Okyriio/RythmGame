@@ -28,6 +28,10 @@ public class NotesObject : MonoBehaviour
             gameObject.SetActive(false);
             GameManager.instance.NoteHit();
         }
+        if (Input.GetKeyDown(keyToPress) && !canBePressed)
+        {
+            GameManager.instance.NoteMiss();
+        }
 	
     }
 
@@ -37,6 +41,7 @@ public class NotesObject : MonoBehaviour
         {
             canBePressed = true;
         }
+        
     }
     
     private void OnTriggerExit2D(Collider2D other)
