@@ -12,6 +12,8 @@ public class KeysController : MonoBehaviour
     
     public KeyCode keyToPress;
 
+    [SerializeField] private AudioSource _soundEffect;
+
 
     
     // Start is called before the first frame update
@@ -27,6 +29,7 @@ public class KeysController : MonoBehaviour
       if (Input.GetKeyDown(keyToPress))
       {
           _spRend.sprite = KeysPressed;
+          _soundEffect.Play();
       }
       
       if (Input.GetKeyUp(keyToPress))

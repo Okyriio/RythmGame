@@ -28,11 +28,6 @@ public class NotesObject : MonoBehaviour
             gameObject.SetActive(false);
             GameManager.instance.NoteHit();
         }
-        if (Input.GetKeyDown(keyToPress) && !canBePressed)
-        {
-            GameManager.instance.NoteMiss();
-        }
-	
     }
 
     private void OnTriggerEnter2D(Collider2D other)
