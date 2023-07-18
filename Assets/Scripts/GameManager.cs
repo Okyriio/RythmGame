@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public void NoteHit()
     {
         Debug.Log("HIt on time");
@@ -60,9 +61,10 @@ public class GameManager : MonoBehaviour
         }
 
         multiText.text = "Multiplier: x" + currentMulti;
-        
         currentScore += scorePerNote * currentMulti;
         scoreText.text = "Score:" + currentScore;
+      
+
     }
 
     public void NoteMiss()
