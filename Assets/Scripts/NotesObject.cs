@@ -14,6 +14,8 @@ public class NotesObject : MonoBehaviour
 	public ScreenShaker shake;
 	private float _magn = 0.3f;
 	private float _duration = 0.25f;
+    [SerializeField] private GameObject _keyPos;
+    public GameObject missEffect, perfectEffect;
     void Start()
     {
     }
@@ -26,7 +28,25 @@ public class NotesObject : MonoBehaviour
 			shake.TriggerShake(_magn,_duration);
             obtained = true;
             gameObject.SetActive(false);
-            GameManager.instance.NoteHit();
+            //GameManager.instance.NoteHit();
+            if (Math.Abs(transform.position.y ) > Math.Abs(_keyPos.transform.position.y + 0.15) )
+            {
+                Debug.Log("NormalHit");
+                GameManager.instance.NormalHit();
+               
+            }
+            else if (Math.Abs(transform.position.y ) > Math.Abs(_keyPos.transform.position.y + 0.05) )
+            {
+               
+                Debug.Log("GoodHit");
+                GameManager.instance.GoodHit();
+            }
+            else  
+            {
+                Debug.Log("PerfectHit");
+                GameManager.instance.PerfectHit();
+                Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+            }
         }
     }
 
@@ -47,6 +67,7 @@ public class NotesObject : MonoBehaviour
             if (!obtained)
             {
                 GameManager.instance.NoteMiss();
+                Instantiate(missEffect, transform.position, perfectEffect.transform.rotation);
 
             }
         }
